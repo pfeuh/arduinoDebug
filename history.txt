@@ -1,0 +1,9 @@
+
+
+v 1.10 2019-09-03
+
+Dump granularity switched from 16 bytes to 1 byte.
+
+v 1.00
+
+FIrst working version.
