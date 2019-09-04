@@ -22,7 +22,7 @@
 
 #include <Arduino.h>
 
-#define ARDUINO_DEBUG_VERSION "1.10"
+#define ARDUINO_DEBUG_VERSION "1.11"
 
 #define console Serial
 #define DEBUG_BUFFER_SIZE 16

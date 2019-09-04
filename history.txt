@@ -1,5 +1,9 @@
 
 
+v 1.11 2019-09-04
+
+Bug fixed on last printable char
+
 v 1.10 2019-09-03
 
 Dump granularity switched from 16 bytes to 1 byte.

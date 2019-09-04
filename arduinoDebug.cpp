@@ -33,6 +33,7 @@
 #define ARDUINO_DEBUG_BYTE_BITS 0xff
 #define ARDUINO_DEBUG_DUMP_NB_ROWS 0x10
 #define ARDUINO_DEBUG_DUMP_LAST_ROW (ARDUINO_DEBUG_DUMP_NB_ROWS - 1)
+#define ARDUINO_DEBUG_LAST_PRINTABLE_CHAR 126
 
 const char ARDUINO_DEBUG_HEX_TAB[] PROGMEM = "0123456789abcdef";
 
@@ -105,7 +106,7 @@ void ARDUINO_DEBUG::dumpRam(byte* addr, word nb_bytes)
 
 char ARDUINO_DEBUG::getAscii(byte octet)
 {
-    if((octet < ' ') || (octet > 127))
+    if((octet < ' ') || (octet > ARDUINO_DEBUG_LAST_PRINTABLE_CHAR))
         return '.';
     else
         return octet;
@@ -165,7 +166,7 @@ void ARDUINO_DEBUG::dump(byte (*get_byte)(word) , word ptr, word nb_bytes)
     {
         while(counter % ARDUINO_DEBUG_DUMP_NB_ROWS)
         {
-            console.print(F("   "));
+            console.print(F("-- "));
             buffer[counter  % ARDUINO_DEBUG_DUMP_NB_ROWS] = ARDUINO_DEBUG_CHR_SPACE;
             counter++;
         }
